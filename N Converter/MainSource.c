@@ -24,9 +24,11 @@ MAIN :
 	printf("4. 절댓값\n");
 	printf("5. 제곱근 값\n");
 	printf("6. x^y 값\n");
-	printf("7. 나머지 값\n");
+	printf("7. x를 y로 나눈 나머지 값\n");
 	printf("8. 종료\n");
 	printf("====================\n");
+
+Minput :
 
 	key = _getch();
 	subkey = inputkeys(key);
@@ -36,7 +38,7 @@ MAIN :
 	if (subkey == 2) {
 		switch (key)
 		{
-		case 49 :
+		case 49: // 삼각비
 			system("cls");
 
 			double t = 0;
@@ -58,10 +60,11 @@ MAIN :
 			printf("하이퍼볼릭 코사인 : %lf\n", cosh(t));
 			printf("하이퍼볼릭 탄젠트 : %lf\n", tanh(t));
 
-		input1 :
+		input1:
 
 			key = _getch();
 			subkey = inputkeys(key);
+
 			if (subkey == 1) {
 				goto MAIN;
 			}
@@ -70,7 +73,7 @@ MAIN :
 				goto input1;
 			}
 
-		case 50 :
+		case 50: // e^x
 			system("cls");
 
 			double ex = 0;
@@ -87,6 +90,7 @@ MAIN :
 
 			key = _getch();
 			subkey = inputkeys(key);
+
 			if (subkey == 1) {
 				goto MAIN;
 			}
@@ -95,7 +99,7 @@ MAIN :
 				goto input2;
 			}
 
-		case 51 :
+		case 51: // log
 			system("cls");
 
 			double nlog = 0;
@@ -113,6 +117,7 @@ MAIN :
 
 			key = _getch();
 			subkey = inputkeys(key);
+
 			if (subkey == 1) {
 				goto MAIN;
 			}
@@ -121,7 +126,7 @@ MAIN :
 				goto input3;
 			}
 
-		case 52 :
+		case 52: // abs
 			system("cls");
 
 			double nabs = 0;
@@ -132,12 +137,13 @@ MAIN :
 			fseek(stdin, 0, SEEK_SET);
 
 			printf("\n입력된 수 : %lf\n\n", nabs);
-			printf("절댓값 : %lf\n", abs(nabs));
+			printf("절댓값 : %lf\n", fabs(nabs));
 
 		input4:
 
 			key = _getch();
 			subkey = inputkeys(key);
+
 			if (subkey == 1) {
 				goto MAIN;
 			}
@@ -145,7 +151,7 @@ MAIN :
 				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input4;
 			}
-		case 53 :
+		case 53: // sqrt
 			system("cls");
 
 			double nsqrt = 0;
@@ -162,6 +168,7 @@ MAIN :
 
 			key = _getch();
 			subkey = inputkeys(key);
+
 			if (subkey == 1) {
 				goto MAIN;
 			}
@@ -169,7 +176,7 @@ MAIN :
 				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input5;
 			}
-		case 54 :
+		case 54: // x^y
 			system("cls");
 
 			double xpow = 0;
@@ -196,10 +203,59 @@ MAIN :
 				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input6;
 			}
-		case 55 :
-		case 56 :
+		case 55: // fmod
+			system("cls");
+
+			double xmod = 0;
+			double ymod = 0;
+
+			printf("x를 y로 나눈 나머지 값을 구할 때 값을 입력해주세요\n");
+			printf("x 입력 : ");
+			scanf("%lf", &xmod);
+			fseek(stdin, 0, SEEK_SET);
+			printf("y 입력 : ");
+			scanf("%lf", &ymod);
+			fseek(stdin, 0, SEEK_SET);
+
+			printf("\n입력된 수 : x = %lf, y = %lf\n\n", xmod, ymod);
+			printf("나머지 값 : %lf\n", fmod(xmod, ymod));
+
+		input7:
+
+			key = _getch();
+			subkey = inputkeys(key);
+
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input7;
+			}
+		case 56:
+			system("cls");
+
+			int exitkey = 0;
+			int funEkey = 0;
+
+			printf("====================\n\n");
+			printf("정말로 나가시겠습니까? [y/n]\n\n");
+			printf("====================\n");
+
+			exitkey = _getch();
+			funEkey = inputkeys(exitkey);
+
+
+			if (exitkey == 89 || exitkey == 121) {
+				return 0;
+			}
+			else if (exitkey == 78 || exitkey == 110 || funEkey == 1) {
+				goto MAIN;
+			}
+
 		default :
-			
+			printf("지정된 키를 입력해주시길 바랍니다.\a\n");
+			goto Minput;
 		}
 	}
 	else {
