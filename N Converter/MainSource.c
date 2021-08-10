@@ -121,8 +121,78 @@ MAIN :
 			}
 
 		case 52 :
+			system("cls");
+
+			double nabs = 0;
+
+			printf("절댓값을 구할 수를 입력해주세요.\n");
+			printf("입력 : ");
+			scanf("%lf", &nabs);
+			fseek(stdin, 0, SEEK_SET);
+
+			printf("\n입력된 수 : %lf\n\n", nabs);
+			printf("log값 : %lf\n", fabs(nabs));
+
+		input4:
+
+			key = _getch();
+			subkey = inputkeys(key);
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input4;
+			}
 		case 53 :
+			system("cls");
+
+			double nsqrt = 0;
+
+			printf("'루트 n'에서 n의 값을 입력해주세요\n");
+			printf("입력 : ");
+			scanf("%lf", &nsqrt);
+			fseek(stdin, 0, SEEK_SET);
+
+			printf("\n입력된 수 : %lf\n\n", nsqrt);
+			printf("제곱근 값 : %lf\n", sqrt(nsqrt));
+
+		input5:
+
+			key = _getch();
+			subkey = inputkeys(key);
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input5;
+			}
 		case 54 :
+			system("cls");
+
+			double nlog = 0;
+
+			printf("log 값으로 바꿀 수를 입력해주세요.\n");
+			printf("입력 : ");
+			scanf("%lf", &nlog);
+			fseek(stdin, 0, SEEK_SET);
+
+			printf("\n입력된 수 : %lf\n\n", nlog);
+			printf("log값 : %lf\n", log(nlog));
+			printf("log10 값 : %lf\n", log10(nlog));
+
+		input3:
+
+			key = _getch();
+			subkey = inputkeys(key);
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input3;
+			}
 		case 55 :
 		default:
 			break;

@@ -1,2 +1,5 @@
 ﻿  MainSource.c
-  N Converter.vcxproj -> C:\Users\시큐어(Secure)\OneDrive\바탕 화면\개인\개발\C++\N Converter\Debug\N Converter.exe
+C:\Users\시큐어(Secure)\OneDrive\바탕 화면\개인\개발\C++\N_Converter\N Converter\MainSource.c(48,11): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'double'입니다.
+C:\Users\시큐어(Secure)\OneDrive\바탕 화면\개인\개발\C++\N_Converter\N Converter\MainSource.c(134,37): warning C4244: '함수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\시큐어(Secure)\OneDrive\바탕 화면\개인\개발\C++\N_Converter\N Converter\MainSource.c(134,11): warning C4477: 'printf' : 서식 문자열 '%lf'에 'double' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+  N Converter.vcxproj -> C:\Users\시큐어(Secure)\OneDrive\바탕 화면\개인\개발\C++\N_Converter\Debug\N Converter.exe
