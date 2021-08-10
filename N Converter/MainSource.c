@@ -25,6 +25,7 @@ MAIN :
 	printf("5. 제곱근 값\n");
 	printf("6. x^y 값\n");
 	printf("7. 나머지 값\n");
+	printf("8. 종료\n");
 	printf("====================\n");
 
 	key = _getch();
@@ -125,13 +126,13 @@ MAIN :
 
 			double nabs = 0;
 
-			printf("절댓값을 구할 수를 입력해주세요.\n");
+			printf("절댓값을 구할 수를 입력해주세요\n");
 			printf("입력 : ");
 			scanf("%lf", &nabs);
 			fseek(stdin, 0, SEEK_SET);
 
 			printf("\n입력된 수 : %lf\n\n", nabs);
-			printf("log값 : %lf\n", fabs(nabs));
+			printf("절댓값 : %lf\n", abs(nabs));
 
 		input4:
 
@@ -171,18 +172,20 @@ MAIN :
 		case 54 :
 			system("cls");
 
-			double nlog = 0;
+			double xpow = 0;
+			double ypow = 0;
 
-			printf("log 값으로 바꿀 수를 입력해주세요.\n");
-			printf("입력 : ");
-			scanf("%lf", &nlog);
+			printf("x^y(x의 y승)의 값들을 입력해주세요\n");
+			printf("x 입력 : ");
+			scanf("%lf", &xpow);
+			fseek(stdin, 0, SEEK_SET);
+			scanf("%lf", ypow);
 			fseek(stdin, 0, SEEK_SET);
 
-			printf("\n입력된 수 : %lf\n\n", nlog);
-			printf("log값 : %lf\n", log(nlog));
-			printf("log10 값 : %lf\n", log10(nlog));
+			printf("\n입력된 수 : x = %lf, y = %lf\n\n", xpow, ypow);
+			printf("x^y 값 : %lf\n", pow(xpow, ypow));
 
-		input3:
+		input6:
 
 			key = _getch();
 			subkey = inputkeys(key);
@@ -191,11 +194,12 @@ MAIN :
 			}
 			else {
 				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
-				goto input3;
+				goto input6;
 			}
 		case 55 :
-		default:
-			break;
+		case 56 :
+		default :
+			
 		}
 	}
 	else {
