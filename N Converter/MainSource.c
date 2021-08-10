@@ -18,6 +18,7 @@ MAIN :
 	system("cls");
 	printf("====================\n");
 	printf("<수 변환기 1.0>\n\n");
+	printf("[자세한 내용과 사용법은 https://github.com/SCESecure/N_Converter 에서 확인 바랍니다.]\n\n");
 	printf("1. 삼각비 값\n");
 	printf("2. e^x 값\n");
 	printf("3. log 값\n");
@@ -326,3 +327,5 @@ int inputkeys(int keynum) {
 		return keyr;
 	}
 }
+
+// Code by 시큐어(Secure)
