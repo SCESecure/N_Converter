@@ -40,11 +40,13 @@ MAIN :
 
 			double t = 0;
 
-			printf("삼각비 값으로 바꿀 값을 입력해주세요.\n");
+			printf("삼각비 값으로 바꿀 값을 입력해주세요.\n\n");
 			printf("입력 : ");
 			scanf("%lf", &t);
+			fseek(stdin, 0, SEEK_SET);
 
-			printf("\n 사인 : %lf\n", sin(t));
+			printf("\n입력된 수 : %d\n\n", t);
+			printf("사인 : %lf\n", sin(t));
 			printf("코사인 : %lf\n", cos(t));
 			printf("탄젠트 : %lf\n\n", tan(t));
 			printf("아크 사인 : %lf\n", asin(t));
@@ -68,6 +70,30 @@ MAIN :
 			}
 
 		case 50 :
+			system("cls");
+
+			double ex = 0;
+
+			printf("e^x(e의 x승, 단 e는 자연상수)에서 x의 값을 입력해주세요.\n");
+			printf("입력 : ");
+			scanf("%lf", &ex);
+			fseek(stdin, 0, SEEK_SET);
+
+			printf("\n입력된 수 : %lf\n\n", ex);
+			printf("e^x : %lf\n", exp(ex));
+
+		input2:
+
+			key = _getch();
+			subkey = inputkeys(key);
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input2;
+			}
+
 		case 51 :
 		case 52 :
 		case 53 :
