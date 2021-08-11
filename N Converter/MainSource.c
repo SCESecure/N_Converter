@@ -165,7 +165,7 @@ Minput :
 			fseek(stdin, 0, SEEK_SET);
 
 			printf("\n입력된 수 : %lf\n\n", nsqrt);
-			printf("제곱근 값 : %lf\n", sqrt(nsqrt));
+			printf("제곱근 값 : %lf\n\n", sqrt(nsqrt));
 
 		input5:
 
