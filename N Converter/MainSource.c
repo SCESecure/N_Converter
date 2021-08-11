@@ -72,7 +72,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input1;
 			}
 
@@ -98,7 +98,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input2;
 			}
 
@@ -125,7 +125,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input3;
 			}
 
@@ -151,7 +151,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input4;
 			}
 		case 53: // sqrt
@@ -176,7 +176,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input5;
 			}
 		case 54: // x^y
@@ -204,7 +204,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input6;
 			}
 		case 55: // fmod
@@ -225,7 +225,7 @@ Minput :
 
 			if (xmod < ymod) {
 				system("cls");
-				printf("\a입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\n");
+				printf("입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\n");
 				
 			ERinput1 :
 
@@ -235,13 +235,13 @@ Minput :
 					goto FMOD;
 				}
 				else {
-					printf("\a백 스페이스키를 입력해주시길 바랍니다.\n");
+					printf("백 스페이스키를 입력해주시길 바랍니다.\n");
 					goto ERinput1;
 				}
 			}
 			else if (ymod == 0) {
 				system("cls");
-				printf("\ay 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\n");
+				printf("y 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\n");
 
 			ERinput2:
 
@@ -251,7 +251,7 @@ Minput :
 					goto FMOD;
 				}
 				else {
-					printf("\a백 스페이스키를 입력해주시길 바랍니다.\n");
+					printf("백 스페이스키를 입력해주시길 바랍니다.\n");
 					goto ERinput2;
 				}
 			}
@@ -268,7 +268,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input7;
 			}
 		case 56:
@@ -298,7 +298,7 @@ Minput :
 				goto MAIN;
 			}
 			else {
-				printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 				goto input8;
 			}
 
@@ -312,6 +312,8 @@ Minput :
 			printf("정말로 나가시겠습니까? [y/n]\n\n");
 			printf("====================\n");
 
+		EXIT :
+
 			exitkey = _getch();
 			funEkey = inputkeys(exitkey);
 
@@ -322,14 +324,18 @@ Minput :
 			else if (exitkey == 78 || exitkey == 110 || funEkey == 1) {
 				goto MAIN;
 			}
+			else {
+				printf("Y 또는 N을 선택해주시길 바랍니다.\n");
+				goto EXIT;
+			}
 		default :
-			printf("\a지정된 키를 입력해주시길 바랍니다.\n");
+			printf("지정된 키를 입력해주시길 바랍니다.\n");
 			goto Minput;
 		}
 	}
 	else {
 	system("cls");
-		printf("\a이미 메인화면에 있습니다.\n");
+		printf("이미 메인화면에 있습니다.\n");
 	MERRinput:
 
 		key = _getch();
@@ -339,7 +345,7 @@ Minput :
 			goto MAIN;
 		}
 		else {
-			printf("\a백 스페이스 키를 입력해주시길 바랍니다.\n");
+			printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
 			goto MERRinput;
 		}
 	}
