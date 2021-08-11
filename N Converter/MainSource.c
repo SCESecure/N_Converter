@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
 
 #include <stdio.h>
 #include <conio.h>
@@ -17,7 +18,7 @@ MAIN :
 	// 메인 화면
 	system("cls");
 	printf("====================\n");
-	printf("<수 변환기 1.0>\n\n");
+	printf("<수 변환기 1.1>\n\n");
 	printf("[자세한 내용과 사용법은 https://github.com/SCESecure/N_Converter 에서 확인 바랍니다.]\n\n");
 	printf("1. 삼각비 값\n");
 	printf("2. e^x 값\n");
@@ -26,8 +27,9 @@ MAIN :
 	printf("5. 제곱근 값\n");
 	printf("6. x^y 값\n");
 	printf("7. x를 y로 나눈 나머지 값\n");
-	printf("8. 종료\n");
-	printf("====================\n");
+	printf("8. 상수값 표시\n");
+	printf("9. 종료\n");
+	printf("====================\n\n");
 
 Minput :
 
@@ -163,7 +165,7 @@ Minput :
 			fseek(stdin, 0, SEEK_SET);
 
 			printf("\n입력된 수 : %lf\n\n", nsqrt);
-			printf("제곱근 값 : %lf\n", sqrt(nsqrt));
+			printf("제곱근 값 : %lf\n\n", sqrt(nsqrt));
 
 		input5:
 
@@ -223,7 +225,7 @@ Minput :
 
 			if (xmod < ymod) {
 				system("cls");
-				printf("입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\a\n");
+				printf("입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\n\n");
 				
 			ERinput1 :
 
@@ -233,13 +235,13 @@ Minput :
 					goto FMOD;
 				}
 				else {
-					printf("백 스페이스키를 입력해주시길 바랍니다.\a\n");
+					printf("백 스페이스키를 입력해주시길 바랍니다.\n");
 					goto ERinput1;
 				}
 			}
 			else if (ymod == 0) {
 				system("cls");
-				printf("y 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\a\n");
+				printf("y 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\n\n");
 
 			ERinput2:
 
@@ -249,7 +251,7 @@ Minput :
 					goto FMOD;
 				}
 				else {
-					printf("백 스페이스키를 입력해주시길 바랍니다.\a\n");
+					printf("백 스페이스키를 입력해주시길 바랍니다.\n");
 					goto ERinput2;
 				}
 			}
@@ -271,13 +273,46 @@ Minput :
 			}
 		case 56:
 			system("cls");
+			printf("====================\n\n");
+			printf("프로그램에서 지원하는 상수 값들은 다음과 같습니다.\n\n");
+			printf("====================\n\n");
+			printf("자연상수(e) : %lf\n\n", M_E);
+			printf("log2e : %lf\n", M_LOG2E);
+			printf("log10e : %lf\n", M_LOG10E);
+			printf("loge2 : %lf\n", M_LN2);
+			printf("loge10 : %lf\n\n", M_LN10);
+			printf("원주율(π) : %lf\n", M_PI);
+			printf("π/2 : %lf\n", M_PI_2);
+			printf("π/4 : %lf\n", M_PI_4);
+			printf("1/π : %lf\n", M_1_PI);
+			printf("2/π : %lf\n", M_2_PI);
+			printf("2/√π : %lf\n\n", M_2_SQRTPI);
+			printf("√2 : %lf\n", M_SQRT2);
+			printf("1/√2 : %lf\n\n", M_SQRT1_2);
+
+		input8:
+
+			key = _getch();
+			subkey = inputkeys(key);
+			if (subkey == 1) {
+				goto MAIN;
+			}
+			else {
+				printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
+				goto input8;
+			}
+
+		case 57 :
+			system("cls");
 
 			int exitkey = 0;
 			int funEkey = 0;
 
 			printf("====================\n\n");
 			printf("정말로 나가시겠습니까? [y/n]\n\n");
-			printf("====================\n");
+			printf("====================\n\n");
+
+		EXIT :
 
 			exitkey = _getch();
 			funEkey = inputkeys(exitkey);
@@ -289,15 +324,18 @@ Minput :
 			else if (exitkey == 78 || exitkey == 110 || funEkey == 1) {
 				goto MAIN;
 			}
-
+			else {
+				printf("Y 또는 N을 선택해주시길 바랍니다.\n");
+				goto EXIT;
+			}
 		default :
-			printf("지정된 키를 입력해주시길 바랍니다.\a\n");
+			printf("지정된 키를 입력해주시길 바랍니다.\n");
 			goto Minput;
 		}
 	}
 	else {
 	system("cls");
-		printf("이미 메인화면에 있습니다.\a\n");
+		printf("이미 메인화면에 있습니다.\n\n");
 	MERRinput:
 
 		key = _getch();
@@ -308,7 +346,7 @@ Minput :
 		}
 		else {
 			printf("백 스페이스 키를 입력해주시길 바랍니다.\n");
-			goto input7;
+			goto MERRinput;
 		}
 	}
 	
