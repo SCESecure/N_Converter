@@ -29,7 +29,7 @@ MAIN :
 	printf("7. x를 y로 나눈 나머지 값\n");
 	printf("8. 상수값 표시\n");
 	printf("9. 종료\n");
-	printf("====================\n");
+	printf("====================\n\n");
 
 Minput :
 
