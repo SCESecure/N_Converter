@@ -225,7 +225,7 @@ Minput :
 
 			if (xmod < ymod) {
 				system("cls");
-				printf("입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\n");
+				printf("입력하실 때 x 값이 y 값보다 커야합니다. (백 스페이스 눌러 돌아가기)\n\n");
 				
 			ERinput1 :
 
@@ -241,7 +241,7 @@ Minput :
 			}
 			else if (ymod == 0) {
 				system("cls");
-				printf("y 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\n");
+				printf("y 값이 0이 될 수 없습니다. (백 스페이스 눌러 돌아가기)\n\n");
 
 			ERinput2:
 
@@ -310,7 +310,7 @@ Minput :
 
 			printf("====================\n\n");
 			printf("정말로 나가시겠습니까? [y/n]\n\n");
-			printf("====================\n");
+			printf("====================\n\n");
 
 		EXIT :
 
