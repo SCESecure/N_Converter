@@ -335,7 +335,7 @@ Minput :
 	}
 	else {
 	system("cls");
-		printf("이미 메인화면에 있습니다.\n");
+		printf("이미 메인화면에 있습니다.\n\n");
 	MERRinput:
 
 		key = _getch();
